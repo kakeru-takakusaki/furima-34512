@@ -19,17 +19,17 @@
 
 ## items
 
-|Column        |Type      |Options            |
-|--------------|----------|-------------------|
-|name          |string    |null: false        |
-|text          |text      |null: false        |
-|price         |integer   |null: false        |
-|category_id   |integer   |null: false        |
-|status_id     |integer   |null: false        |
-|sipping_fee_id|integer   |null: false        |
-|prefecture_id |integer   |null: false        |
-|sipping_day_id|integer   |null: false        |
-|user          |references|foreign_key: true  |
+|Column         |Type      |Options            |
+|---------------|----------|-------------------|
+|name           |string    |null: false        |
+|text           |text      |null: false        |
+|price          |integer   |null: false        |
+|category_id    |integer   |null: false        |
+|status_id      |integer   |null: false        |
+|shipping_fee_id|integer   |null: false        |
+|prefecture_id  |integer   |null: false        |
+|shipping_day_id|integer   |null: false        |
+|user           |references|foreign_key: true  |
 
 
 ### Association
@@ -49,10 +49,10 @@
 
 -belongs_to :item
 -belongs_to :user
--has_one:   :sipping_address
+-has_one:   :shipping_address
 
 
-## sipping_addresses
+## shipping_addresses
 
 |Column       |Type      |Options            |
 |-------------|----------|-------------------|
@@ -60,7 +60,7 @@
 |prefecture_id|integer   |null: false        |
 |municipality |string    |null: false        |
 |address      |string    |null: false        |
-|building_name|string    |null: false        |
+|building_name|string    |                   |
 |phone_number |string    |null: false        |
 |purchase     |references|foreign_key: true  |
 

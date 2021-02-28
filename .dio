@@ -1,4 +1,4 @@
-<mxfile host="65bd71144e" modified="2021-02-28T08:59:02.512Z" agent="5.0 (Macintosh; Intel Mac OS X 11_0_1) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.53.2 Chrome/87.0.4280.141 Electron/11.2.1 Safari/537.36" version="14.2.4" etag="k-ettR3GcA13PlN85rKg" type="embed">
+<mxfile host="65bd71144e" modified="2021-02-28T09:57:23.649Z" agent="5.0 (Macintosh; Intel Mac OS X 11_0_1) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.53.2 Chrome/87.0.4280.141 Electron/11.2.1 Safari/537.36" version="14.2.4" etag="E_6JafzokqWnbMtEtS43" type="embed">
     <diagram id="hHgLNHmaYNrqydNXBplk" name="ページ1">
         <mxGraphModel dx="1383" dy="830" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
@@ -16,10 +16,10 @@
                 <mxCell id="31" value="name&#10;text&#10;price&#10;category_id&#10;status_id&#10;sipping_fee_id&#10;prefecture_id&#10;sipping_day_id&#10;user  FK" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=17;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="30">
                     <mxGeometry y="30" width="240" height="195" as="geometry"/>
                 </mxCell>
-                <mxCell id="35" value="sipping_addressesテーブル" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">
+                <mxCell id="35" value="shipping_addressesテーブル" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">
                     <mxGeometry x="530" y="430" width="240" height="200" as="geometry"/>
                 </mxCell>
-                <mxCell id="36" value="postal_code&#10;prefecture&#10;municipality&#10;adress&#10;phone_number&#10;purchace_id FK" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=17;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="35">
+                <mxCell id="36" value="postal_code&#10;prefecture_id&#10;municipality&#10;adress&#10;building_name&#10;phone_number&#10;purchace  FK" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=17;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="35">
                     <mxGeometry y="30" width="240" height="170" as="geometry"/>
                 </mxCell>
                 <mxCell id="39" value="purchasesテーブル" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">
