@@ -1,15 +1,15 @@
 ## users
 
-|Column          |Type  |Options                  |
-|----------------|------|-------------------------|
-|nickname        |string|null: false, unique: true|
-|email           |string|null: false, unique: true|
-|password        |string|null: false              |
-|family_name     |string|null: false              |
-|first_name      |string|null: false              |
-|family_name_kana|string|null: false              |
-|first_name_kana |string|null: false              |
-|birthday        |string|null: false              |
+|Column            |Type  |Options                  |
+|------------------|------|-------------------------|
+|nickname          |string|null: false, unique: true|
+|email             |string|null: false, unique: true|
+|encrypted_password|string|null: false              |
+|family_name       |string|null: false              |
+|first_name        |string|null: false              |
+|family_name_kana  |string|null: false              |
+|first_name_kana   |string|null: false              |
+|birthday          |date  |null: false              |
 
 ### Association
 
@@ -19,19 +19,17 @@
 
 ## items
 
-|Column     |Type   |Options            |
-|-----------|-------|-------------------|
-|item_name  |string |null: false        |
-|text       |text   |null: false        |
-|price      |integer|null: false        |
-|category   |string |null: false        |
-|item_status|string |null: false        |
-|sipping_fee|string |null: false        |
-|prefecture |string |null: false        |
-|sipping_day|string |null: false        |
-|sold_out   |string |                   |
-|image      |        ActiveStorage      |
-|user_id    |        foreign_key: true  |
+|Column        |Type      |Options            |
+|--------------|----------|-------------------|
+|name          |string    |null: false        |
+|text          |text      |null: false        |
+|price         |integer   |null: false        |
+|category_id   |integer   |null: false        |
+|status_id     |integer   |null: false        |
+|sipping_fee_id|integer   |null: false        |
+|prefecture_id |integer   |null: false        |
+|sipping_day_id|integer   |null: false        |
+|user          |references|foreign_key: true  |
 
 
 ### Association
@@ -42,10 +40,10 @@
 
 ## purchases
 
-|Column |Type   |Options            |
-|-------|-------|-------------------|
-|item_id|     foreign_key: true     |
-|user_id|     foreign_key: true     |
+|Column |Type      |Options             |
+|-------|----------|--------------------|
+|item   |references|foreign_key: true   |
+|user   |references|foreign_key: true   |
 
 ### Association
 
@@ -56,14 +54,14 @@
 
 ## sipping_addresses
 
-|Column      |Type   |Options            |
-|------------|-------|-------------------|
-|postal_code |string |null: false        |
-|prefecture  |string |null: false        |
-|municipality|string |null: false        |
-|address     |string |null: false        |
-|phone_number|integer|null: false        |
-|purchase_id |     foreign_key: true     |
+|Column      |Type      |Options            |
+|------------|----------|-------------------|
+|postal_code |string    |null: false        |
+|prefecture  |string    |null: false        |
+|municipality|string    |null: false        |
+|address     |string    |null: false        |
+|phone_number|integer   |null: false        |
+|purchase    |references|foreign_key: true  |
 
 ### Association
 
