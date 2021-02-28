@@ -35,7 +35,7 @@
 ### Association
 
 -belongs_to :user
--has_one    :purchases
+-has_one    :purchase
 
 
 ## purchases
@@ -54,14 +54,15 @@
 
 ## sipping_addresses
 
-|Column      |Type      |Options            |
-|------------|----------|-------------------|
-|postal_code |string    |null: false        |
-|prefecture  |string    |null: false        |
-|municipality|string    |null: false        |
-|address     |string    |null: false        |
-|phone_number|integer   |null: false        |
-|purchase    |references|foreign_key: true  |
+|Column       |Type      |Options            |
+|-------------|----------|-------------------|
+|postal_code  |string    |null: false        |
+|prefecture_id|integer   |null: false        |
+|municipality |string    |null: false        |
+|address      |string    |null: false        |
+|building_name|string    |null: false        |
+|phone_number |string    |null: false        |
+|purchase     |references|foreign_key: true  |
 
 ### Association
 
