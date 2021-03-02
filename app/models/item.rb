@@ -9,6 +9,7 @@ class Item < ApplicationRecord
   belongs_to :shipping_day
 
   with_options presence: true do
+    validates :image
     validates :name
     validates :text
     validates :price, numericality: { greater_than_or_equal_to: 300, less_than: 10000000, message: 'の範囲外です' }, format: { with: /\A[0-9]+\z/, message: 'には半角数字のみで入力してください' }
