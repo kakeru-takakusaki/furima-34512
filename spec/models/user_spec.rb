@@ -8,7 +8,9 @@ RSpec.describe User, type: :model do
 
   describe 'ユーザー新規登録' do
     context '保存できる場合' do
-      
+      it 'すべての値を正しく入力した場合、保存できること' do
+        expect(@user).to be_valid
+      end
     end
 
     context '保存できない場合' do
