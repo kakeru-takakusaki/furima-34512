@@ -11,7 +11,7 @@ class Item < ApplicationRecord
   with_options presence: true do
     validates :name
     validates :text
-    validates :price
+    validates :price, numericality: { greater_than_or_equal_to: 300, less_than: 10000000 }, format: { with: /\A[0-9]+\z/, message: 'には半角数字のみで入力してください' }
   end
 
   with_options presence: true, numericality: { other_than: 1 } do
