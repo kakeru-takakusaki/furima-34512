@@ -82,7 +82,6 @@ RSpec.describe Item, type: :model do
       it '販売価格は半角数字のみ保存可能であること(半角英字のみで保存できないこと)' do
         @item.price = 'five thousand'
         @item.valid?
-        binding.pry
         expect(@item.errors.full_messages).to include('Price の範囲外です')
       end
     end
