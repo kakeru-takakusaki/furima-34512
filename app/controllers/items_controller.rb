@@ -45,7 +45,6 @@ class ItemsController < ApplicationController
   end
 
   def redirect_root
-    set_item
     if current_user.id != @item.user.id
       redirect_to root_path
     end
