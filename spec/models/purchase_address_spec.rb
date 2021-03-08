@@ -11,6 +11,10 @@ RSpec.describe PurchaseAddress, type: :model do
       it 'ログイン状態の出品者以外のユーザーのみ、必要な情報を適切に入力すると、商品の購入ができること' do
         expect(@purchase_address).to be_valid
       end
+      it '建物名が空欄でも保存できること'do
+        @purchase_address.building_name = ''
+        expect(@purchase_address).to be_valid
+      end
     end
 
     context '保存できない場合' do
