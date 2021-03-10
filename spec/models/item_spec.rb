@@ -84,6 +84,11 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include('Price の範囲外です')
       end
+      it 'sold_statusが空では登録できないこと' do
+        @item.sold_status = ''
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Sold status can't be blank")
+      end
     end
   end
 end
