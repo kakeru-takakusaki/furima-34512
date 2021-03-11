@@ -1,5 +1,7 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user!, only: [:index, :create]
   before_action :set_item,     only: [:index, :create]
+  before_action :redirect_root,      only: [:index, :create]
 
   def index
     @purchase_address = PurchaseAddress.new
@@ -34,6 +36,12 @@ class OrdersController < ApplicationController
         card: purchase_address_params[:token],
         currency: 'jpy'
       )
+  end
+
+  def redirect_root
+    if current_user.id == @item.user.id || @item.sold_status == 'sold'
+      redirect_to root_path
+    end
   end
 
 end
