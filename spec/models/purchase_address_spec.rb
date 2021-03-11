@@ -59,6 +59,16 @@ RSpec.describe PurchaseAddress, type: :model do
         @purchase_address.valid?
         expect(@purchase_address.errors.full_messages).to include("Phone number can't be blank")
       end
+      it '電話番号は11桁以内の数値のみ保存可能なこと(12文字)' do
+        @purchase_address.phone_number = '090123456789'
+        @purchase_address.valid?
+        expect(@purchase_address.errors.full_messages).to include("Phone number is too long (maximum is 11 characters)")
+      end
+      it '電話番号は11桁以内の数値のみ保存可能なこと(9文字)' do
+        @purchase_address.phone_number = '123456789'
+        @purchase_address.valid?
+        expect(@purchase_address.errors.full_messages).to include("Phone number is too short (minimum is 10 characters)")
+      end
       it '電話番号は11桁以内の数値のみ保存可能なこと' do
         @purchase_address.phone_number = '090-1234-5678'
         @purchase_address.valid?

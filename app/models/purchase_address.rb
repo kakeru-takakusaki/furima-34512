@@ -9,7 +9,7 @@ class PurchaseAddress
     validates :prefecture_id, numericality: { other_than: 1, message: 'を選択してください' }
     validates :municipality
     validates :address
-    validates :phone_number, format: { with: /\A[0-9]+\z/ }
+    validates :phone_number, format: { with: /\A[0-9]+\z/ }, length: { minimum: 10, maximum: 11 }
     validates :token
   end
 
