@@ -10,6 +10,7 @@ class OrdersController < ApplicationController
     if @purchase_address.valid?
       pay_item
       @purchase_address.save
+      @item.update(sold_status: 'sold')
       redirect_to root_path
     else
       render :index
