@@ -50,7 +50,7 @@ class ItemsController < ApplicationController
   end
 
   def redirect_root
-    if current_user.id != @item.user.id
+    if current_user.id != @item.user.id || @item.sold_status == 'sold'
       redirect_to root_path
     end
   end
